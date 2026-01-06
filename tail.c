@@ -23,6 +23,7 @@ int main(int argc, char const *argv[]) {
             pos = lseek(fd,--pos,SEEK_SET);
             if(read(fd,&ch,1)==1 && ch=='\n') count++;
         }
+        pos++;
         char *buff = malloc(end-pos);
         lseek(fd, pos, SEEK_SET);
         ssize_t dSize = read(fd,buff,end-pos);
