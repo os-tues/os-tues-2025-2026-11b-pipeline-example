@@ -19,7 +19,7 @@ int main(int argc, char const *argv[]) {
         }
         int end = lseek(fd,0,SEEK_END),pos=end,count=0;
         char ch;
-        while(pos>0 && count<11){
+        while(pos>0 && count<10){
             pos = lseek(fd,--pos,SEEK_SET);
             if(read(fd,&ch,1)==1 && ch=='\n') count++;
         }
